@@ -15,7 +15,6 @@ export const Sales = () => {
       fetchSalesToday: state.fetchSalesToday,
     })
   );
-  const [hasFetched, setHasFetched] = useState(false);
 
   useEffect(() => {
     
@@ -48,13 +47,13 @@ export const Sales = () => {
     );
 
   return (
-    <div className="lg:gap-4 flex flex-wrap lg:justify-normal text-black text-xs mx-auto lg:mx-0 lg:w-full lg:max-h-[calc(100%_-_48px)]">
+    <div className="lg:gap-4 flex flex-wrap lg:justify-normal text-xs mx-auto lg:mx-0 lg:w-full lg:max-h-[calc(100%_-_48px)]">
       <h3 className="text-2xl py-2 w-full">Historial de ventas</h3>
-      {/* <DataTable
+      <DataTable
         columns={columns}
         data={salesToday}
         
-      /> */}
+      />
       <ChartPie data={salesToday} totalAmount={reduceAmount(salesToday)} />
     </div>
   );

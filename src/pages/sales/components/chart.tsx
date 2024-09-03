@@ -155,7 +155,7 @@ export function ChartPie({ data, totalAmount }) {
   );
 
   return (
-    <Card className="mt-4 lg:mt-0 shadow-lg border border-[#E0E0E0] mb-2 lg:mb-0 order-2 lg:order-3 flex flex-col w-full lg:w-1/4 h-fit">
+    <Card className="mt-4 lg:mt-0 shadow-lg border border-[#2D2F40] mb-2 lg:mb-0 order-2 lg:order-3 flex flex-col w-full lg:w-1/4 h-fit">
       <CardHeader className="items-center pb-0">
         <CardTitle>Ventas en total</CardTitle>
         <CardDescription>7 de Julio de 2024</CardDescription>

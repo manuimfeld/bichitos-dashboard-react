@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
 function getToken() {
   const token = localStorage.getItem("authorization");
   return token;

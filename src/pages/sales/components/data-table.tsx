@@ -15,8 +15,6 @@ import {
 } from "@/components/ui/table"
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
 import { ReloadSvg } from "./reloadSvg";
 import SelectDate from "./selectDate";
  
@@ -37,7 +35,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="mt-4 lg:mt-0 shadow-lg border border-[#E0E0E0] order-3 lg:order-2 rounded-md w-full lg:w-1/2 bg-white p-4">
+    <div className="mt-4 lg:mt-0 shadow-lg border border-[#2D2F40] order-3 lg:order-2 rounded-md w-full lg:w-1/2  p-4">
       <SelectDate params="ventas" />
       <div className="flex items-center">
         
@@ -83,6 +81,8 @@ export function DataTable<TData, TValue>({
           )}
         </TableBody>
       </Table>
+
+      {/* Prev - Next pagination
       <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
@@ -100,7 +100,8 @@ export function DataTable<TData, TValue>({
         >
           Siguiente
         </Button>
-      </div>
+      </div> 
+      */} 
     </div>
   );
 }

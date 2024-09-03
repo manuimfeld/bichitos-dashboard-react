@@ -1,10 +1,12 @@
+import { Link, NavLink } from "react-router-dom";
+
 export const AsideMenu = () => {
   return (
     <nav className="hidden md:block text-xs border-r border-[#E5E7EB] dark:border-[#2D2F40] col-start-1 row-start-1 row-end-3 dark:bg-[#020817] dark:text-white text-black bg-white">
       <div className="h-12 flex items-center justify-center">
-        <a href="/dashboard">
+        <Link to="/dashboard">
           <img src="/bichitos-logo.webp" width={40} height={40} alt="logo" />
-        </a>
+        </Link>
       </div>
       <ul className="text-[16px] flex flex-col items-start font-light w-full px-10 mt-2">
         <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
@@ -22,9 +24,9 @@ export const AsideMenu = () => {
             <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
             <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
           </svg>
-          <a href="/dashboard" className="ml-2">
+          <NavLink className="ml-2" to="/dashboard">
             Inicio
-          </a>
+          </NavLink>
         </li>
         <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
@@ -59,9 +61,9 @@ export const AsideMenu = () => {
           >
             <path d="M12 20v-6M6 20V10M18 20V4" />
           </svg>
-          <a href="/dashboard/ventas" className="ml-2">
+          <NavLink to="/dashboard/ventas" className="ml-2">
             Ver ventas
-          </a>
+          </NavLink>
         </li>
         <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
           <svg
@@ -78,9 +80,9 @@ export const AsideMenu = () => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <a href="/dashboard/ventas/crear" className="ml-2">
+          <NavLink className="ml-2" to="/dashboard/ventas/crear">
             Crear ventas
-          </a>
+          </NavLink>
         </li>
 
         <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
@@ -116,9 +118,9 @@ export const AsideMenu = () => {
           >
             <path d="M12 20v-6M6 20V10M18 20V4" />
           </svg>
-          <a href="/dashboard/productos" className="ml-2">
+          <NavLink href="/dashboard/productos" className="ml-2">
             Ver productos
-          </a>
+          </NavLink>
         </li>
         <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-2 py-2 rounded-sm flex items-center">
           <svg
@@ -135,9 +137,9 @@ export const AsideMenu = () => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <a href="/dashboard/productos/crear" className="ml-2">
+          <NavLink href="/dashboard/productos/crear" className="ml-2">
             Crear productos
-          </a>
+          </NavLink>
         </li>
 
         <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
@@ -173,7 +175,7 @@ export const AsideMenu = () => {
           >
             <path d="M12 20v-6M6 20V10M18 20V4" />
           </svg>
-          <a href="/dashboard/gastos">Ver gastos</a>
+          <NavLink href="/dashboard/gastos">Ver gastos</NavLink>
         </li>
         <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
           <svg
@@ -191,7 +193,7 @@ export const AsideMenu = () => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <a href="/dashboard/gastos/crear">Crear gastos</a>
+          <NavLink href="/dashboard/gastos/crear">Crear gastos</NavLink>
         </li>
         <li className="font-normal mt-2 hover:bg-[#292B50] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
@@ -209,9 +211,9 @@ export const AsideMenu = () => {
             <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
             <line x1="12" y1="2" x2="12" y2="12"></line>
           </svg>
-          <a  href="/login">
+          <NavLink  href="/login">
             Cerrar sesión
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
