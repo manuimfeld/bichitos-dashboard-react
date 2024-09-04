@@ -1,13 +1,12 @@
 import { create } from "zustand";
-import { fetchSalesToday, fetchSalesMonth } from "../services/salesServices";
-import { getSalesThisMonth, getSalesToday } from "@/services/sales/sales";
+import { getSalesMonth, getSalesToday } from "@/services/sales/sales";
 import { getExpensesMonth } from "@/services/expenses/expenses";
 import { StoreState } from "@/types/store";
 
 const useStore = create<StoreState>((set) => ({
   salesToday: [],
-  salesMonth: { total_sales: null, total_sales_count: "0" },
-  expensesMonth: { total_expenses_amount: null, total_expenses_count: "0" },
+  salesMonth: { total_sales: null, total_sales_count: 0 },
+  expensesMonth: { total_expenses_amount: null, total_expenses_count: 0 },
   error: null,
   loadingToday: false,
   loadingExpenses: false,
@@ -29,7 +28,7 @@ const useStore = create<StoreState>((set) => ({
   fetchAllSalesMonth: async () => {
     set({ loadingAll: true, error: null });
     try {
-      const data = await getSalesThisMonth();
+      const data = await getSalesMonth();
       set({ salesMonth: data });
     } catch (error) {
       set({ error: "Error fetching all sales" });
@@ -59,8 +58,8 @@ const useStore = create<StoreState>((set) => ({
     });
     try {
       const [salesToday, salesMonth, expensesMonth] = await Promise.all([
-        fetchSalesToday(),
-        fetchSalesMonth(),
+        getSalesToday(),
+        getSalesMonth(),
         getExpensesMonth(),
       ]);
       set({ salesToday, salesMonth, expensesMonth });

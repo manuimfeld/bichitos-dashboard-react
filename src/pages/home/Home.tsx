@@ -4,23 +4,13 @@ import { DashboardSummary } from "./components/dashboardSummary";
 export const Home = () => {
   const {
     salesToday,
-    allSales,
-    allExpenses,
+    salesMonth,
+    expensesMonth,
     error,
     loadingToday,
     loadingExpenses,
     loadingAll,
   } = useDashboardData();
-
-  console.log({
-    salesToday,
-    allSales,
-    allExpenses,
-    error,
-    loadingToday,
-    loadingExpenses,
-    loadingAll,
-  });
 
   if (loadingToday || loadingExpenses || loadingAll) {
     return (
@@ -42,8 +32,12 @@ export const Home = () => {
     <div className="flex flex-wrap justify-center md:justify-between gap-3">
       <DashboardSummary
         salesToday={salesToday}
-        allSales={allSales}
-        allExpenses={allExpenses}
+        salesMonth={salesMonth}
+        expensesMonth={expensesMonth}
+        error={error}
+        loadingToday={loadingToday}
+        loadingExpenses={loadingExpenses}
+        loadingAll={loadingAll}
       />
     </div>
   );

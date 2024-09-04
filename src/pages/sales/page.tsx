@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import reduceAmount from "@/lib/reduceAmount";
 import { DataTable } from "./components/data-table";
 import { Skeleton } from "@/components/ui/skeleton";

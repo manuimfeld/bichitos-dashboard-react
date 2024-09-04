@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { deleteSale } from "@/services/api";
+import { deleteSale } from "@/services/sales/sales";
 
 export const DeleteAlertDialogContent = ({ sale_id }) => {
   const { toast } = useToast();

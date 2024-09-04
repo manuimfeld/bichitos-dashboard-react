@@ -6,7 +6,7 @@ const API_URL = "http://localhost:3001/api";
 
 export const getSalesToday = async (): Promise<Sale[]> => {
   try {
-    const response = await axios.get(`${API_URL}/sales`, getApiHeaders());
+    const response = await axios.get(`${API_URL}/sales/today`, getApiHeaders());
     return response.data as Sale[];
   } catch (error) {
     console.error("Error fetching sales", error);
@@ -14,7 +14,7 @@ export const getSalesToday = async (): Promise<Sale[]> => {
   }
 };
 
-export const getSalesThisMonth = async (): Promise<SalesSummary> => {
+export const getSalesMonth = async (): Promise<SalesSummary> => {
   try {
     const response = await axios.get(
       `${API_URL}/sales/summary/month`,
@@ -23,6 +23,23 @@ export const getSalesThisMonth = async (): Promise<SalesSummary> => {
     return response.data as SalesSummary;
   } catch (error) {
     console.error("Error fetching sales", error);
+    throw error;
+  }
+};
+
+interface DeleteSaleParams {
+  sale_id: number;
+}
+
+export const deleteSale = async ({ sale_id }: DeleteSaleParams) => {
+  try {
+    const response = await axios.delete(
+      `${API_URL}/sales/${sale_id}`,
+      getApiHeaders()
+    );
+    return response;
+  } catch (error) {
+    console.error("Error al eliminar la venta", error);
     throw error;
   }
 };

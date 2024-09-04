@@ -165,7 +165,7 @@ export const Header = () => {
                     >
                       <path d="M12 20v-6M6 20V10M18 20V4" />
                     </svg>
-                    <Link href="/dashboard/gastos">Ver gastos</Link>
+                    <Link to="/dashboard/gastos">Ver gastos</Link>
                   </li>
                   <li className=" mt-1 ml-6 hover:bg-[#EDEDED] w-fit px-2 flex items-center">
                     <svg
@@ -183,7 +183,7 @@ export const Header = () => {
                       <line x1="12" y1="5" x2="12" y2="19"></line>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                    <Link href="/dashboard/gastos/crear">Crear gastos</Link>
+                    <Link to="/dashboard/gastos/crear">Crear gastos</Link>
                   </li>
 
                   <li className="font-normal mt-2 hover:bg-[#EDEDED] w-full px-2 flex items-center">
@@ -219,7 +219,7 @@ export const Header = () => {
                     >
                       <path d="M12 20v-6M6 20V10M18 20V4" />
                     </svg>
-                    <Link href="/dashboard/productos">Ver productos</Link>
+                    <Link to="/dashboard/productos">Ver productos</Link>
                   </li>
                   <li className=" mt-1 ml-6 hover:bg-[#EDEDED] w-fit px-2 flex items-center">
                     <svg
@@ -237,9 +237,7 @@ export const Header = () => {
                       <line x1="12" y1="5" x2="12" y2="19"></line>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                    <Link href="/dashboard/productos/crear">
-                      Crear productos
-                    </Link>
+                    <Link to="/dashboard/productos/crear">Crear productos</Link>
                   </li>
                   <li className=" mt-2 hover:bg-[#EDEDED] w-full px-2 flex items-center">
                     <svg
@@ -257,7 +255,7 @@ export const Header = () => {
                       <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
                       <line x1="12" y1="2" x2="12" y2="12"></line>
                     </svg>
-                    <Link href="/login">Cerrar sesión</Link>
+                    <Link to="/login">Cerrar sesión</Link>
                   </li>
                 </ul>
                 <SheetFooter>

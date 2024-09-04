@@ -118,7 +118,7 @@ export const AsideMenu = () => {
           >
             <path d="M12 20v-6M6 20V10M18 20V4" />
           </svg>
-          <NavLink href="/dashboard/productos" className="ml-2">
+          <NavLink to="/dashboard/productos" className="ml-2">
             Ver productos
           </NavLink>
         </li>
@@ -137,7 +137,7 @@ export const AsideMenu = () => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <NavLink href="/dashboard/productos/crear" className="ml-2">
+          <NavLink to="/dashboard/productos/crear" className="ml-2">
             Crear productos
           </NavLink>
         </li>
@@ -175,7 +175,7 @@ export const AsideMenu = () => {
           >
             <path d="M12 20v-6M6 20V10M18 20V4" />
           </svg>
-          <NavLink href="/dashboard/gastos">Ver gastos</NavLink>
+          <NavLink to="/dashboard/gastos">Ver gastos</NavLink>
         </li>
         <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
           <svg
@@ -193,7 +193,7 @@ export const AsideMenu = () => {
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
-          <NavLink href="/dashboard/gastos/crear">Crear gastos</NavLink>
+          <NavLink to="/dashboard/gastos/crear">Crear gastos</NavLink>
         </li>
         <li className="font-normal mt-2 hover:bg-[#292B50] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
@@ -211,7 +211,7 @@ export const AsideMenu = () => {
             <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
             <line x1="12" y1="2" x2="12" y2="12"></line>
           </svg>
-          <NavLink href="/login">Cerrar sesión</NavLink>
+          <NavLink to="/login">Cerrar sesión</NavLink>
         </li>
       </ul>
     </nav>

@@ -4,8 +4,8 @@ import useStore from "../store/store";
 const useDashboardData = () => {
   const {
     salesToday,
-    allSales,
-    allExpenses,
+    salesMonth,
+    expensesMonth,
     error,
     loadingToday,
     loadingExpenses,
@@ -14,8 +14,8 @@ const useDashboardData = () => {
     fetchAllData,
   } = useStore((state) => ({
     salesToday: state.salesToday,
-    allSales: state.allSales,
-    allExpenses: state.allExpenses,
+    salesMonth: state.salesMonth,
+    expensesMonth: state.expensesMonth,
     error: state.error,
     loadingToday: state.loadingToday,
     loadingExpenses: state.loadingExpenses,
@@ -35,8 +35,8 @@ const useDashboardData = () => {
 
   return {
     salesToday,
-    allSales,
-    allExpenses,
+    salesMonth,
+    expensesMonth,
     error,
     loadingToday,
     loadingExpenses,

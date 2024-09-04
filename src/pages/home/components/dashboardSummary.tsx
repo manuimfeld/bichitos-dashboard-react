@@ -1,9 +1,21 @@
 import { Skeleton } from "@/components/ui/skeleton";
+import { ExpensesSummary } from "@/types/expenses";
+import { Sale, SalesSummary } from "@/types/sales";
 
-export const DashboardSummary = ({
+interface DashboardSummaryProps {
+  salesToday: Sale[];
+  salesMonth: SalesSummary;
+  expensesMonth: ExpensesSummary;
+  loadingToday: boolean;
+  loadingExpenses: boolean;
+  loadingAll: boolean;
+  error: string | null;
+}
+
+export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
   salesToday,
-  allSales,
-  allExpenses,
+  salesMonth,
+  expensesMonth,
   loadingToday,
   loadingExpenses,
   loadingAll,
@@ -155,14 +167,10 @@ export const DashboardSummary = ({
             id="ingresos-mes"
             className="text-3xl font-bold text-green-500 dark:text-green-400 mt-2"
           >
-            $
-            {Intl.NumberFormat(
-              ("es-AR",
-              {
-                style: "currency",
-                currency: "ARS",
-              })
-            ).format(allSales.total_sales)}
+            {Intl.NumberFormat("es-AR", {
+              style: "currency",
+              currency: "ARS",
+            }).format(salesMonth.total_sales ?? 0)}
           </p>
         </div>
       </div>
@@ -191,7 +199,7 @@ export const DashboardSummary = ({
             id="numero-ventas"
             className="text-3xl font-bold text-blue-500 dark:text-blue-400 mt-2"
           >
-            {allSales.total_sales_count} ventas
+            {salesMonth.total_sales_count} ventas
           </p>
         </div>
       </div>
@@ -220,14 +228,10 @@ export const DashboardSummary = ({
             id="gastos-mes"
             className="text-3xl font-bold text-red-500 dark:text-red-400 mt-2"
           >
-            $
-            {Intl.NumberFormat(
-              ("es-AR",
-              {
-                style: "currency",
-                currency: "ARS",
-              })
-            ).format(allExpenses.total_expenses_amount)}
+            {Intl.NumberFormat("es-AR", {
+              style: "currency",
+              currency: "ARS",
+            }).format(expensesMonth.total_expenses_amount ?? 0)}
           </p>
         </div>
       </div>
@@ -245,9 +249,9 @@ export const DashboardSummary = ({
               </tr>
             </thead>
             <tbody className="text-black dark:text-white text-opacity-80 select-none">
-              {latestSalesToday.map((sale, index) => (
+              {latestSalesToday.map((sale) => (
                 <tr
-                  key={index}
+                  key={sale.sale_id}
                   className="border-b border-gray-200 dark:border-gray-700"
                 >
                   <td className="py-2">
