@@ -10,12 +10,13 @@ import {
 } from "@/components/ui/sheet";
 import { Bell, Moon, Sun } from "lucide-react";
 import { useTheme } from "../themeProvider";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const SHEET_SIDES = ["left"];
 
 export const Header = () => {
   const { setTheme } = useTheme();
+  const location = useLocation();
 
   return (
     <header className="col-start-1 col-end-3 row-start-1 row-end-2 md:col-start-2 md:row-start-1 md:row-end-2 bg-white dark:bg-[#020817] dark:text-white h-12 border-b border-[#E5E7EB] dark:border-[#2D2F40] md:p-4">
@@ -267,7 +268,9 @@ export const Header = () => {
             </Sheet>
           ))}
         </div>
-        <p className="w-fit">as</p>
+        <p className="w-fit">
+          {location.pathname === "/" ? "/dashboard" : location.pathname}
+        </p>
         <Bell stroke="currentColor" className="ml-auto" />
 
         <Moon
