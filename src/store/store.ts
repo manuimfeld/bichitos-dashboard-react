@@ -1,14 +1,13 @@
 import { create } from "zustand";
-import {
-  fetchSalesToday,
-  fetchAllSales,
-  fetchAllExpenses,
-} from "../services/salesServices";
+import { fetchSalesToday, fetchSalesMonth } from "../services/salesServices";
+import { getSalesThisMonth, getSalesToday } from "@/services/sales/sales";
+import { getExpensesMonth } from "@/services/expenses/expenses";
+import { StoreState } from "@/types/store";
 
-const useStore = create((set) => ({
+const useStore = create<StoreState>((set) => ({
   salesToday: [],
-  allSales: [],
-  allExpenses: [],
+  salesMonth: { total_sales: null, total_sales_count: "0" },
+  expensesMonth: { total_expenses_amount: null, total_expenses_count: "0" },
   error: null,
   loadingToday: false,
   loadingExpenses: false,
@@ -18,39 +17,39 @@ const useStore = create((set) => ({
   fetchSalesToday: async () => {
     set({ loadingToday: true, error: null });
     try {
-      const data = await fetchSalesToday();
+      const data = await getSalesToday();
       set({ salesToday: data });
     } catch (error) {
       set({ error: "Error fetching today's sales" });
+      throw error;
     } finally {
       set({ loadingToday: false });
     }
   },
-
-  fetchExpensesMonth: async () => {
-    set({ loadingExpenses: true, error: null });
-    try {
-      const data = await fetchAllExpenses();
-      set({ allExpenses: data });
-    } catch (error) {
-      set({ error: "Error fetching expenses" });
-    } finally {
-      set({ loadingExpenses: false });
-    }
-  },
-
-  fetchAllSales: async () => {
+  fetchAllSalesMonth: async () => {
     set({ loadingAll: true, error: null });
     try {
-      const data = await fetchAllSales();
-      set({ allSales: data });
+      const data = await getSalesThisMonth();
+      set({ salesMonth: data });
     } catch (error) {
       set({ error: "Error fetching all sales" });
+      throw error;
     } finally {
       set({ loadingAll: false });
     }
   },
-
+  fetchExpensesMonth: async () => {
+    set({ loadingExpenses: true, error: null });
+    try {
+      const data = await getExpensesMonth();
+      set({ expensesMonth: data });
+    } catch (error) {
+      set({ error: "Error fetching expenses" });
+      throw error;
+    } finally {
+      set({ loadingExpenses: false });
+    }
+  },
   fetchAllData: async () => {
     set({
       loadingToday: true,
@@ -59,14 +58,15 @@ const useStore = create((set) => ({
       error: null,
     });
     try {
-      const [salesToday, allExpenses, allSales] = await Promise.all([
+      const [salesToday, salesMonth, expensesMonth] = await Promise.all([
         fetchSalesToday(),
-        fetchAllExpenses(),
-        fetchAllSales(),
+        fetchSalesMonth(),
+        getExpensesMonth(),
       ]);
-      set({ salesToday, allExpenses, allSales });
+      set({ salesToday, salesMonth, expensesMonth });
     } catch (error) {
       set({ error: "Error fetching data" });
+      throw error;
     } finally {
       set({
         loadingToday: false,

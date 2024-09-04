@@ -20,7 +20,7 @@ export const fetchSalesToday = async () => {
   }
 };
 
-export const fetchAllSales = async () => {
+export const fetchSalesMonth = async () => {
   try {
     const response = await axios.get(
       `http://localhost:3001/api/sales-month`,
