@@ -266,4 +266,4 @@ export const DashboardSummary = ({
       </div>
     </>
   );
-}
+};

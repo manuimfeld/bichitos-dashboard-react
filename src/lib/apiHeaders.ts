@@ -3,8 +3,8 @@ export const getToken = () => localStorage.getItem("authorization");
 export const getApiHeaders = () => {
   return {
     headers: {
-      "Authorization": `${getToken()}`,
+      Authorization: `${getToken()}`,
       "Content-Type": "application/json",
-    }
+    },
   };
 };

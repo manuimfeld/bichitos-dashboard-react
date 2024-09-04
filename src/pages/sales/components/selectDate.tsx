@@ -30,9 +30,9 @@ export default function SelectDate({ params }) {
     const formattedCurrentDate = format(currentDate, "yyyy-MM-dd");
 
     if (formattedDate === formattedCurrentDate) {
-      alert("Navegando")
+      alert("Navegando");
     } else {
-        alert("Navegando")
+      alert("Navegando");
     }
   };
 

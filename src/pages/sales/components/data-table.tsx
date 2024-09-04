@@ -3,8 +3,8 @@ import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-} from "@tanstack/react-table"
- 
+} from "@tanstack/react-table";
+
 import {
   Table,
   TableBody,
@@ -12,34 +12,32 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 import { Button } from "@/components/ui/button";
 import { ReloadSvg } from "./reloadSvg";
 import SelectDate from "./selectDate";
- 
+
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
-  })
+  });
 
   return (
     <div className="mt-4 lg:mt-0 shadow-lg border border-[#2D2F40] order-3 lg:order-2 rounded-md w-full lg:w-1/2  p-4">
       <SelectDate params="ventas" />
       <div className="flex items-center">
-        
-        <ReloadSvg/>
+        <ReloadSvg />
       </div>
       <Table className="text-xs">
         <TableHeader>
@@ -101,7 +99,7 @@ export function DataTable<TData, TValue>({
           Siguiente
         </Button>
       </div> 
-      */} 
+      */}
     </div>
   );
 }

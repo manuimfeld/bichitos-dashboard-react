@@ -15,8 +15,7 @@ import { Link, NavLink } from "react-router-dom";
 const SHEET_SIDES = ["left"];
 
 export const Header = () => {
-  const { setTheme } = useTheme()
-
+  const { setTheme } = useTheme();
 
   return (
     <header className="col-start-1 col-end-3 row-start-1 row-end-2 md:col-start-2 md:row-start-1 md:row-end-2 bg-white dark:bg-[#020817] dark:text-white h-12 border-b border-[#E5E7EB] dark:border-[#2D2F40] md:p-4">
@@ -72,12 +71,9 @@ export const Header = () => {
                       <path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9" />
                       <path d="M9 22V12h6v10M2 10.6L12 2l10 8.6" />
                     </svg>
-                    <NavLink
-          className="underline"
-          to="/dashboard"
-        >
-          Inicio
-        </NavLink>
+                    <NavLink className="underline" to="/dashboard">
+                      Inicio
+                    </NavLink>
                   </li>
                   <li className="font-normal mt-2 hover:bg-[#EDEDED] w-full px-2 flex items-center">
                     <svg
@@ -112,12 +108,9 @@ export const Header = () => {
                     >
                       <path d="M12 20v-6M6 20V10M18 20V4" />
                     </svg>
-                    <NavLink
-          className="text-red-300"
-          to="/dashboard/ventas"
-        >
-          Ver ventas
-        </NavLink>
+                    <NavLink className="text-red-300" to="/dashboard/ventas">
+                      Ver ventas
+                    </NavLink>
                   </li>
                   <li className=" mt-1 ml-6 hover:bg-[#EDEDED] w-fit px-2 flex items-center">
                     <svg
@@ -264,9 +257,7 @@ export const Header = () => {
                       <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
                       <line x1="12" y1="2" x2="12" y2="12"></line>
                     </svg>
-                    <Link href="/login">
-                      Cerrar sesión
-                    </Link>
+                    <Link href="/login">Cerrar sesión</Link>
                   </li>
                 </ul>
                 <SheetFooter>
@@ -278,26 +269,21 @@ export const Header = () => {
             </Sheet>
           ))}
         </div>
-        <p className="w-fit">
-          as
-        </p>
+        <p className="w-fit">as</p>
         <Bell stroke="currentColor" className="ml-auto" />
-       
-            <Moon
-              stroke="currentColor"
-              onClick={() => setTheme("dark")}
-              className="ml-4 cursor-pointer"
-            />
-     
-   
-            <Sun
-              stroke="#FDB813"
-              onClick={() => setTheme("light")}
-              className="ml-4 cursor-pointer"
-            />
-       
-    
+
+        <Moon
+          stroke="currentColor"
+          onClick={() => setTheme("dark")}
+          className="ml-4 cursor-pointer"
+        />
+
+        <Sun
+          stroke="#FDB813"
+          onClick={() => setTheme("light")}
+          className="ml-4 cursor-pointer"
+        />
       </div>
     </header>
   );
-}
+};

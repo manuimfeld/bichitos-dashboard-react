@@ -57,7 +57,7 @@ export const EditDialogContent = ({ sale }) => {
   const { toast } = useToast();
 
   function getToken() {
-    let token = localStorage.getItem("authorization");
+    const token = localStorage.getItem("authorization");
     return token;
   }
 

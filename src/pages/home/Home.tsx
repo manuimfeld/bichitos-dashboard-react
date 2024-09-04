@@ -12,8 +12,15 @@ export const Home = () => {
     loadingAll,
   } = useDashboardData();
 
-  console.log({ salesToday, allSales, allExpenses, error, loadingToday, loadingExpenses, loadingAll });
-
+  console.log({
+    salesToday,
+    allSales,
+    allExpenses,
+    error,
+    loadingToday,
+    loadingExpenses,
+    loadingAll,
+  });
 
   if (loadingToday || loadingExpenses || loadingAll) {
     return (
