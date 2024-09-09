@@ -45,9 +45,9 @@ export const AsideMenu = () => {
             <circle cx="18" cy="20.5" r="1" />
             <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
           </svg>
-          Ventas
+          <NavLink to="/dashboard/ventas">Ventas</NavLink>
         </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
+        <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -58,33 +58,13 @@ export const AsideMenu = () => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="mr-2"
           >
-            <path d="M12 20v-6M6 20V10M18 20V4" />
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M7 15h0M2 9.5h20" />
           </svg>
-          <NavLink to="/dashboard/ventas" className="ml-2">
-            Ver ventas
-          </NavLink>
+          <NavLink to="/dashboard/gastos">Gastos</NavLink>
         </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <NavLink className="ml-2" to="/dashboard/ventas/crear">
-            Crear ventas
-          </NavLink>
-        </li>
-
         <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -102,98 +82,7 @@ export const AsideMenu = () => {
             <circle cx="18" cy="20.5" r="1" />
             <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
           </svg>
-          Productos
-        </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-2 py-2 rounded-sm flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 20v-6M6 20V10M18 20V4" />
-          </svg>
-          <NavLink to="/dashboard/productos" className="ml-2">
-            Ver productos
-          </NavLink>
-        </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-2 py-2 rounded-sm flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <NavLink to="/dashboard/productos/crear" className="ml-2">
-            Crear productos
-          </NavLink>
-        </li>
-
-        <li className="font-normal mt-2 hover:bg-[#f5f5f5] dark:hover:bg-[#2D2F40] w-full px-4 rounded-sm py-2 flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2"
-          >
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M7 15h0M2 9.5h20" />
-          </svg>
-          Gastos
-        </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2"
-          >
-            <path d="M12 20v-6M6 20V10M18 20V4" />
-          </svg>
-          <NavLink to="/dashboard/gastos">Ver gastos</NavLink>
-        </li>
-        <li className="font-light mt-1 ml-6 hover:bg-[#f0f4f8] dark:hover:bg-[#2D2F40] w-fit px-4 py-2 rounded-sm flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2"
-          >
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <NavLink to="/dashboard/gastos/crear">Crear gastos</NavLink>
+          <NavLink to="/dashboard/productos">Productos</NavLink>
         </li>
         <li className="font-normal mt-2 hover:bg-[#292B50] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
