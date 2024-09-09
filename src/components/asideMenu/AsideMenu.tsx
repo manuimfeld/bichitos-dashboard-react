@@ -82,7 +82,12 @@ export const AsideMenu = () => {
             <circle cx="18" cy="20.5" r="1" />
             <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
           </svg>
-          <NavLink to="/dashboard/productos">Productos</NavLink>
+          <NavLink
+            to="/dashboard/productos"
+            className="pointer-events-none line-through"
+          >
+            Productos
+          </NavLink>
         </li>
         <li className="font-normal mt-2 hover:bg-[#292B50] w-full px-4 rounded-sm py-2 flex items-center">
           <svg
