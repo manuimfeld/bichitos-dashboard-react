@@ -56,7 +56,6 @@ export function DataTable<TData, TValue>({
     <>
       <div className="w-full lg:w-1/2 flex items-center">
         <SelectDate params="ventas" />
-
         <CreateSaleDialog />
         <ReloadSvg />
       </div>
