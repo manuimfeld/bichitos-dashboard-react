@@ -235,7 +235,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      {/*  <div className="flex flex-col gap-4">
         <div className="bg-white dark:bg-[#020817] bg-opacity-20 shadow-lg rounded-lg p-4 backdrop-filter backdrop-blur-lg">
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
             Últimas 5 Ventas
@@ -267,7 +267,7 @@ export const DashboardSummary: React.FC<DashboardSummaryProps> = ({
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

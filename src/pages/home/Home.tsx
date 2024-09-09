@@ -6,6 +6,7 @@ export const Home = () => {
   const {
     salesToday,
     salesMonth,
+    salesYear,
     expensesMonth,
     error,
     loadingToday,
@@ -40,7 +41,7 @@ export const Home = () => {
         loadingExpenses={loadingExpenses}
         loadingAll={loadingAll}
       />
-      <ChartSalesCount />
+      <ChartSalesCount data={salesYear} />
     </div>
   );
 };

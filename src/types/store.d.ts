@@ -4,6 +4,7 @@ import { Sale, SalesSummary } from "./sales";
 interface StoreState {
   salesToday: Sale[];
   salesMonth: SalesSummary;
+  salesYear: [];
   expensesMonth: ExpensesSummary;
   error: string | null;
   loadingToday: boolean;
@@ -13,5 +14,6 @@ interface StoreState {
   fetchSalesToday: () => Promise<void>;
   fetchExpensesMonth: () => Promise<void>;
   fetchAllSalesMonth: () => Promise<void>;
+  fetchAllSalesYear: () => Promise<void>;
   fetchAllData: () => Promise<void>;
 }

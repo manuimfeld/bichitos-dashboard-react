@@ -27,6 +27,19 @@ export const getSalesMonth = async (): Promise<SalesSummary> => {
   }
 };
 
+export const getSalesYear = async (): Promise<Sale[]> => {
+  try {
+    const response = await axios.get(
+      `${API_URL}/sales/summary/year`,
+      getApiHeaders()
+    );
+    return response.data as Sale[];
+  } catch (error) {
+    console.error("Error fetching sales", error);
+    throw error;
+  }
+};
+
 interface DeleteSaleParams {
   sale_id: number;
 }

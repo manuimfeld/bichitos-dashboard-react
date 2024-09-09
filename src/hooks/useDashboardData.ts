@@ -5,6 +5,7 @@ const useDashboardData = () => {
   const {
     salesToday,
     salesMonth,
+    salesYear,
     expensesMonth,
     error,
     loadingToday,
@@ -12,15 +13,18 @@ const useDashboardData = () => {
     dataLoaded,
     loadingAll,
     fetchAllData,
+    fetchAllSalesYear,
   } = useStore((state) => ({
     salesToday: state.salesToday,
     salesMonth: state.salesMonth,
+    salesYear: state.salesYear,
     expensesMonth: state.expensesMonth,
     error: state.error,
     loadingToday: state.loadingToday,
     loadingExpenses: state.loadingExpenses,
     dataLoaded: state.dataLoaded,
     loadingAll: state.loadingAll,
+    fetchAllSalesYear: state.fetchAllSalesYear,
     fetchAllData: state.fetchAllData,
   }));
 
@@ -37,6 +41,7 @@ const useDashboardData = () => {
     salesToday,
     salesMonth,
     expensesMonth,
+    salesYear,
     error,
     loadingToday,
     loadingExpenses,
