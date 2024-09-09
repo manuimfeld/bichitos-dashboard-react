@@ -1,5 +1,6 @@
 import useDashboardData from "@/hooks/useDashboardData";
 import { DashboardSummary } from "./components/dashboardSummary";
+import { ChartSalesCount } from "./components/chartSalesCount";
 
 export const Home = () => {
   const {
@@ -39,6 +40,7 @@ export const Home = () => {
         loadingExpenses={loadingExpenses}
         loadingAll={loadingAll}
       />
+      <ChartSalesCount />
     </div>
   );
 };
