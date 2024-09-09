@@ -8,7 +8,7 @@ export const ReloadSvg = (props) => {
       stroke="#C2C2C2"
       fill="#C2C2C2"
       strokeWidth={0.005}
-      className="ml-auto cursor-pointer"
+      className="cursor-pointer"
       viewBox="-48.97 -48.97 587.64 587.64"
       {...props}
     >

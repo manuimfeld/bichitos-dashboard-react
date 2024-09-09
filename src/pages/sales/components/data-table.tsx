@@ -16,6 +16,7 @@ import {
 
 import { ReloadSvg } from "./reloadSvg";
 import SelectDate from "./selectDate";
+import { CreateSaleDialog } from "./createSale";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -37,6 +38,9 @@ export function DataTable<TData, TValue>({
       <SelectDate params="ventas" />
       <div className="flex items-center">
         <ReloadSvg />
+        <div className="bg-red-200">
+          <CreateSaleDialog />
+        </div>
       </div>
       <Table className="text-xs">
         <TableHeader>
