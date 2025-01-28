@@ -12,8 +12,16 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { DeleteAlertDialogContent } from "./deleteButton";
 import { EditDialogContent } from "./editButton";
+import { ColumnDef } from "@tanstack/react-table";
 
-export const columns = [
+type Sale = {
+  sale_id: number;
+  amount: number;
+  payment_method: "Efectivo" | "Transferencia" | "Débito" | "Crédito";
+  turn: "Mañana" | "Tarde";
+  sale_date: string;
+};
+export const columns: ColumnDef<Sale>[] = [
   {
     accessorKey: "payment_method",
     header: "Pago",

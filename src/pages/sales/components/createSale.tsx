@@ -131,7 +131,7 @@ export function CreateSaleDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Crear venta</Button>
+        <Button variant="outline">+ Crear venta</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md h-3/4">
         <DialogHeader>

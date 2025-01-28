@@ -49,7 +49,7 @@ export default function SelectDate({ params }) {
                 !date && "text-muted-foreground"
               )}
             >
-              {date ? format(date, "PPP") : <span>Pick a date</span>}
+              {date ? format(date, "PPP") : <span>Buscar por fecha</span>}
               <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
             </Button>
           </PopoverTrigger>
@@ -60,6 +60,7 @@ export default function SelectDate({ params }) {
               onSelect={(date) => {
                 setDate(date);
                 setValue("date", date); // Update react-hook-form with the selected date
+                onSubmit();
               }}
               disabled={(date) =>
                 date > new Date() || date < new Date("1900-01-01")
@@ -69,12 +70,6 @@ export default function SelectDate({ params }) {
           </PopoverContent>
         </Popover>
         {errors.date && <p className="text-red-500">{errors.date.message}</p>}
-        <button
-          type="submit"
-          className="inline uppercase text-white bg-[#00ADD2] md:text-xs text-md h-10 md:h-fit rounded-md md:w-fit w-fit md:py-3 px-4 md:px-4 mt-2 md:mt-0 md:ml-2"
-        >
-          Buscar {params}
-        </button>
       </div>
     </form>
   );
